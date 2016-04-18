@@ -2,7 +2,7 @@ package macrobase.datamodel;
 
 import java.util.Comparator;
 
-public class DatumComparator implements Comparator {
+public class DatumComparator implements Comparator<Datum> {
 
     private int dimension;
 
@@ -16,9 +16,7 @@ public class DatumComparator implements Comparator {
     }
 
     @Override
-    public int compare(Object o1, Object o2) {
-        Datum d1 = (Datum) o1;
-        Datum d2 = (Datum) o2;
+    public int compare(Datum d1, Datum d2) {
         Double metric1 = d1.getMetrics().getEntry(this.dimension);
         Double metric2 = d2.getMetrics().getEntry(this.dimension);
         return metric1.compareTo(metric2);

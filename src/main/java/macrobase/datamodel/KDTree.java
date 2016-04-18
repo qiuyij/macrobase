@@ -46,10 +46,10 @@ public class KDTree {
             }
 
             int widestDimension = 0;
-            double maxDidth = -1;
+            double maxWidth = -1;
             for (int i = 0; i < k ; i++) {
-                if (differences[i] > maxDidth) {
-                    maxDidth = differences[i];
+                if (differences[i] > maxWidth) {
+                    maxWidth = differences[i];
                     widestDimension = i;
                 }
             }
@@ -77,14 +77,10 @@ public class KDTree {
             this.items = data;
             this.nBelow = data.size();
 
-            RealMatrix ret = new Array2DRowRealMatrix(data.size(), this.k);
             RealVector sum = new ArrayRealVector(this.k);
 
-            int index = 0;
             for (HasMetrics d : data) {
-                ret.setRow(index, d.getMetrics().toArray());
                 sum = sum.add(d.getMetrics());
-                index += 1;
             }
 
             this.mean = sum.mapDivide(this.nBelow);

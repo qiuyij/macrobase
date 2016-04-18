@@ -1,0 +1,16 @@
+kernel: gaussian
+sampleSize: 15000
+
+tolMultiplier: .5
+cutoffMultiplier: 1.5
+bwMultiplier: 1.0
+
+useGrid: true
+gridSizes:
+  - 0.8
+  - 0.5
+splitByWidth: true
+
+waitForUser: false
+showTreeTraversal: false
+dumpScores: true

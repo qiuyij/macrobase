@@ -5,6 +5,7 @@ import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.RealVector;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DiagnosticsUtils {
@@ -75,5 +76,14 @@ public class DiagnosticsUtils {
         }
 
         return convertToGrid(gridPointVectors);
+    }
+
+    public static String array2dToString(double[][] data) {
+        StringBuilder s = new StringBuilder();
+        for (double[] curRow : data) {
+            s.append(Arrays.toString(curRow));
+            s.append("\n");
+        }
+        return s.toString().trim();
     }
 }

@@ -1,0 +1,26 @@
+inputFile: nyc_taxi.csv.gz
+columns:
+  - dropoff_lat
+  - dropoff_lon
+  - pickup_lat
+  - pickup_lon
+attributes: []
+
+kernel: gaussian
+percentile: .01
+trainSize: 240000
+testSize: 200000
+relTolerance: 10.0
+relCutoff: 50.0
+sampleSize: 30000
+bwMultiplier: 1.0
+
+splitByWidth: true
+useGrid: true
+gridSizes:
+  - 0.8
+  - 0.5
+
+waitForUser: false
+showTreeTraversal: false
+dumpScores: false
